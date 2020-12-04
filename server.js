@@ -1,5 +1,10 @@
 'use strict';
 
+// For deployment
+// 1. create an app
+// 2. connect github
+// 3. click the deploy button
+
 
 // npm (node package manager) is what allows us to load libraries into a node environment / app
 // 1. run npm init -this creates package.json
@@ -19,6 +24,7 @@ const express = require('express');
 
 // Global Variables
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // configure app with middleware
 
@@ -68,6 +74,6 @@ app.get('/starShark', (request, response) =>{
 // function buildShark()
 
 // Make it listen on a PORT
-app.listen(3000, () => console.log('yay the server actually started'));
+app.listen(PORT, () => console.log('yay the server actually started'));
 
 
